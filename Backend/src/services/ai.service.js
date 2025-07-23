@@ -8,7 +8,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // Initialize the AI client
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
-const reviewCode = async () => {
+const reviewCode = async (prompt) => {
   try {
     // Check if API key exists
     if (!GEMINI_API_KEY) {
@@ -20,7 +20,7 @@ const reviewCode = async () => {
       systemInstruction:'You are a helpful AI assistant that reviews code for bugs, style issues, and improvement suggestions.'
      });
 
-    const prompt = `Please review the following code for bugs, style issues, and improvement suggestions:`;
+    //const prompt = `Please review the following code for bugs, style issues, and improvement suggestions:`;
     
     // Generate content
     const result = await model.generateContent(prompt);

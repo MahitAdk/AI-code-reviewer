@@ -3,7 +3,7 @@ import AIresponse from '../controllers/ai.controller.js';
 
 const AIrouter=express.Router()
 
-AIrouter.post('/get-response',AIresponse);
+AIrouter.post('/get-review',AIresponse);
 
 
 export default AIrouter;
