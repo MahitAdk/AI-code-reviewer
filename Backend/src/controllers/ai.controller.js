@@ -11,7 +11,7 @@ const AIresponse=async (req,res)=>{
 
     const response=await reviewCode(code)
 
-    return response; // Return the AI's response as JSON
+    return res.json({review:response}); // Return the AI's response as JSON
 }
 
 //http://localhost:3000/ai/get-review 

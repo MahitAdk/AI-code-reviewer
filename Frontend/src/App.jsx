@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import react,{ useState, useEffect } from 'react'
 import "prismjs/themes/prism-tomorrow.css"
 import Editor from "react-simple-code-editor"
 import prism from "prismjs"
@@ -22,7 +22,8 @@ function App() {
 
   async function reviewCode() {
     const response = await axios.post('http://localhost:3000/ai/get-review', { code })
-    setReview(response.data)
+    console.log(response.data)
+    setReview(response.data.review)
   }
 
   return (
